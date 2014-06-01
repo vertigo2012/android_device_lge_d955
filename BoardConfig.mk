@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2013 The CyanogenMod Project
+# Copyright (C) 2014 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,11 +14,17 @@
 # limitations under the License.
 #
 
-include device/lge/g2-common/BoardConfigCommon.mk
+include device/lge/z-common/BoardConfigCommon.mk
 
-TARGET_KERNEL_CONFIG := cyanogenmod_d801_defconfig
+TARGET_BOOTLOADER_BOARD_NAME := z
 
-TARGET_OTA_ASSERT_DEVICE := d801,g2,galbi
+TARGET_KERNEL_CONFIG := z-tmo-perf_defconfig ## Stock defconfig
 
-G2_DTS_TARGET := msm8974-g2-tmo_us
+## Recovery
+BOARD_RECOVERY_SWIPE := true
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
+
+TARGET_OTA_ASSERT_DEVICE := zee,d959
+
+G2_DTS_TARGET := msm8974-z-tmo
 
